@@ -45,10 +45,7 @@ if(!isset($_SESSION['usuario'])){
         <div class="nav navbar-nav">
             <a class="nav-item nav-link active" href="#" aria-current="page">Administrador<span class="visually-hidden">(current)</span></a>
             <!-- se redirecciona a servicios con la url declarada para que la muestre -->
-            <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/servicios/">Servicios</a>
-            <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/productos/">Productos</a>
             <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/entradas/">Entradas</a>
-            <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/experiencias/">Experiencias</a>
             <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/portafolio/">Portafolio</a>
             <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/config/">Configuraciones</a>
             <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/usuarios/">Usuarios</a>

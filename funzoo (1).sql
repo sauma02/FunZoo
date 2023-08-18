@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2023 at 02:48 AM
+-- Generation Time: Aug 18, 2023 at 02:15 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -24,6 +24,32 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `configuraciones`
+--
+
+CREATE TABLE `configuraciones` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `descripcion` longtext NOT NULL,
+  `imagen` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entradas`
+--
+
+CREATE TABLE `entradas` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `descripcion` longtext NOT NULL,
+  `imagen` longblob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `permisos`
 --
 
@@ -37,7 +63,8 @@ CREATE TABLE `permisos` (
 --
 
 INSERT INTO `permisos` (`id`, `rol`) VALUES
-(1, 'Administrador');
+(1, 'Administrador'),
+(2, 'Usuario');
 
 -- --------------------------------------------------------
 
@@ -47,8 +74,17 @@ INSERT INTO `permisos` (`id`, `rol`) VALUES
 
 CREATE TABLE `portafolio` (
   `id` int(11) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
   `imagen` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Dumping data for table `portafolio`
+--
+
+INSERT INTO `portafolio` (`id`, `titulo`, `imagen`) VALUES
+(2, 'Perros', 0x313639323331373635305f62726f73687572655f66756e5f7a6f6f5f315f5f315f2d312d72656d6f766562672d707265766965772e706e67),
+(3, 'sdfsdfsdf', 0x313639323331373636335f62726f73687572655f66756e5f7a6f6f5f315f5f315f2d312d72656d6f766562672d707265766965772e706e67);
 
 -- --------------------------------------------------------
 
@@ -75,6 +111,18 @@ INSERT INTO `usuarios` (`usuario`, `password`, `idrol`, `id`) VALUES
 --
 
 --
+-- Indexes for table `configuraciones`
+--
+ALTER TABLE `configuraciones`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `entradas`
+--
+ALTER TABLE `entradas`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `permisos`
 --
 ALTER TABLE `permisos`
@@ -98,16 +146,28 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT for table `configuraciones`
+--
+ALTER TABLE `configuraciones`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `entradas`
+--
+ALTER TABLE `entradas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `permisos`
 --
 ALTER TABLE `permisos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `portafolio`
 --
 ALTER TABLE `portafolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `usuarios`
