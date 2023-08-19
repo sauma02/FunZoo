@@ -13,7 +13,7 @@ if(isset($_GET["txtID"])){
     $sentencia->bindParam(":id", $txtID);
     $sentencia->execute();
     $registro_de_imagen=$sentencia->fetch(PDO::FETCH_LAZY);
-    //Listar Registros
+    
     if(isset($registro_de_imagen["imagen"])){
         if(file_exists("../../../assets/imgFunzoo/".$registro_de_imagen["imagen"])){
             //Borrar con unlink
@@ -23,6 +23,7 @@ if(isset($_GET["txtID"])){
         }
     }
 }
+//Listar Registros
 $sentencia = $conexion->prepare("SELECT * FROM `portafolio`");
 $sentencia->execute();
 $Lista_portafolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);

@@ -2,8 +2,7 @@
 include("../../template/header.php");
 require("../../db/db-connection.php");
 if($_POST){
-    print_r($_POST);
-    print_r($_FILES);
+   
     $titulo=(isset($_POST["titulo"]))?$_POST["titulo"]:"";
     $imagen=(isset($_FILES["imagen"]["name"]))?$_FILES["imagen"]["name"]:"";
     $fecha_imagen = new DateTime();
