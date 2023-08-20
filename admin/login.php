@@ -108,6 +108,7 @@ if($lista_usuarios['n_usuario']>0 && $lista_usuarios['idrol'] ==  1){
       </div>
 
       <input name="" id="" class="btn btn-primary" type="submit" value="Entrar">
+      <a name="" id="" class="btn btn-danger" href="../index.php" role="button">Regresar</a>
     </form>
 
 

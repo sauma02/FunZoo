@@ -4,6 +4,7 @@ require("../../db/db-connection.php");
 if($_POST){
    
     $titulo=(isset($_POST["titulo"]))?$_POST["titulo"]:"";
+    $descripcion=(isset($_POST["descripcion"]))?$_POST["descripcion"]:"";
     $imagen=(isset($_FILES["imagen"]["name"]))?$_FILES["imagen"]["name"]:"";
     $fecha_imagen = new DateTime();
     //Se valida se hay algo diferente de vacio en el cuadro de imagen, si es diferente, con el metodo timestamp traemos la fecha y concatenamos el nombre de la imagen
@@ -15,8 +16,9 @@ if($_POST){
   
 
 }
-$sentencia=$conexion->prepare("INSERT INTO `portafolio`(`id`, `titulo`, `imagen`) VALUES (NULL, :titulo, :imagen);");
+$sentencia=$conexion->prepare("INSERT INTO `portafolio`(`id`, `titulo`, `descripcion`, `imagen`) VALUES (NULL, :titulo, :descripcion, :imagen);");
 $sentencia->bindParam(":titulo", $titulo);
+$sentencia->bindParam(":descripcion", $descripcion);
 $sentencia->bindParam(":imagen", $nombre_archivo_imagen);
 $sentencia->execute();
 $mensaje="Registro agregado con éxito";
@@ -35,6 +37,12 @@ header("Location:index.php?mensaje=".$mensaje);
           <label for="titulo" class="form-label">Titulo</label>
           <input type="text"
             class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Ingrese el titulo de la imagen">
+         
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripcion</label>
+          <input type="text"
+            class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Ingrese la descripcion">
          
         </div>
         <div class="mb-3">

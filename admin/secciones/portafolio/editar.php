@@ -12,18 +12,22 @@ if(isset($_GET['txtID'])){
     //Se utiliza un fetch para recuperar los datos de una sola variable, un dato exclusivo, por eso se usa el fecth_lazy, para obtener el dato de un solo registro
     $registro=$sentencia->fetch(PDO::FETCH_LAZY);
     $titulo=$registro['titulo'];
+    $descripcion = $registro['descripcion'];
     $imagen=$registro['imagen'];
+
 }
 if($_POST){
     $txtID = (isset($_GET['txtID']))?$_GET['txtID']:"";
     $titulo = (isset($_POST['titulo']))?$_POST['titulo']:"";
+    $descripcion = (isset($_POST['descripcion']))?$_POST['descripcion']:"";
     $imagen = (isset($_FILES['imagen']['name']))?$_FILES['imagen']['name']:"";
 
     $sentencia=$conexion->prepare("UPDATE `portafolio`
-    SET titulo=:titulo
+    SET titulo=:titulo, descripcion=:descripcion
     WHERE id=:id");
     $sentencia->bindParam(":id", $txtID);
     $sentencia->bindParam("titulo", $titulo);
+    $sentencia->bindParam(":descripcion", $descripcion);
     $sentencia->execute();
          //Para llamar a la imagen
     //Se le póne fecha a imagen
@@ -37,7 +41,7 @@ if($_POST){
         $nombre_archivo_imagen=($imagen!="")?$fecha_imagen->getTimestamp()."_".$imagen:"";
         $tmp_imagen=$_FILES["imagen"]["tmp_name"];
        //Si es diferente de vacio, se mueve la imagen con este metodo
-        move_uploaded_file($tmp_imagen, "../../../assets/imgFunzoo".$nombre_archivo_imagen);
+        move_uploaded_file($tmp_imagen, "../../../assets/imgFunzoo/".$nombre_archivo_imagen);
     
     
         //Antes de actualizar se necesita borrar la imagen previamente almacenada
@@ -49,9 +53,9 @@ if($_POST){
            //Verificar si existe la imagen con file exits
     if(isset($registro_imagen['imagen'])){
 
-        if(file_exists("../../../assets/img/about/".$registro_imagen['imagen'])){
+        if(file_exists("../../../assets/img/imgFunzoo/".$registro_imagen['imagen'])){
             //borrar con unlink
-            unlink("../../../assets/img/about/".$registro_imagen['imagen']);
+            unlink("../../../assets/img/imgFunzoo/".$registro_imagen['imagen']);
         }else{
             echo "No existe..";
         }
@@ -87,6 +91,12 @@ if($_POST){
           <label for="titulo" class="form-label">Titulo:</label>
           <input type="text" value="<?php echo $titulo?>"
             class="form-control" name="titulo" id="titulo" aria-describedby="helpId" placeholder="Ingrese el titulo de la imagen">
+         
+        </div>
+        <div class="mb-3">
+          <label for="descripcion" class="form-label">Descripcion:</label>
+          <input type="text" value="<?php echo $descripcion?>"
+            class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Ingrese una nueva descripcion">
          
         </div>
         <div class="mb-3">

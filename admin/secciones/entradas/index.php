@@ -32,6 +32,7 @@ $Listar_entradas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+
 ?>
 
 <div class="card">
@@ -56,7 +57,7 @@ $Listar_entradas=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <td scope="row"><?php echo $entradas['id']?></td>
                         <td><?php echo $entradas['titulo']?></td>
                         <td><?php echo $entradas['descripcion']?></td>
-                        <td><img width ="50px" src="../../../assets/imgFunzoo/<?php echo $entradas['imagen'];?>" class="" alt=""><?php echo $entradas['imagen'];?></td>
+                        <td><img width ="100px" src="../../../assets/imgFunzoo/<?php echo $entradas['imagen'];?>" class="" alt=""><?php echo $entradas['imagen'];?></td>
                         <td>
                         <a name="" id="" class="btn btn-primary" href="editar.php?txtID=<?php echo $entradas['id'];?>" role="button">Editar</a>
                         |

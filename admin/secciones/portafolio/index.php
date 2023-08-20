@@ -46,6 +46,7 @@ $Lista_portafolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <tr>
                         <th scope="col">Id:</th>
                         <th scope="col">Titulo:</th>
+                        <th scope="col">Descripcion:</th>
                         <th scope="col">Imagen:</th>
                         <th scope="col">Accion:</th>
                     </tr>
@@ -55,6 +56,7 @@ $Lista_portafolio=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <tr class="">
                         <td scope="row"><?php echo $portafolio['id']?></td>
                         <td><?php echo $portafolio['titulo']?></td>
+                        <td><?php echo $portafolio['descripcion']?></td>
                         <td><img width ="50px" src="../../../assets/imgFunzoo/<?php echo $portafolio['imagen'];?>" class="" alt=""><?php echo $portafolio['imagen'];?></td>
                         <td>
                         <a name="" id="" class="btn btn-primary" href="editar.php?txtID=<?php echo $portafolio['id'];?>" role="button">Editar</a>
