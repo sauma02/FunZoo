@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-08-2023 a las 09:50:48
+-- Tiempo de generación: 21-08-2023 a las 10:42:27
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -49,7 +49,12 @@ INSERT INTO `configuraciones` (`id`, `titulo`, `descripcion`, `imagen`) VALUES
 (12, 'Objetivos', 'Defender y velar por la proteccion de los animales, haciendo valer las leyes de protección animal existentes. Denunciar las irregularidades que tengan que ver con la tenencia de animales. Desarrollar proyectos con la finalidad de bienestar animal y realizar actividades para financiar los fines sociales de nuestra entidad. Promoveremos el respeto a todo ser viviente y sus derechos a tener una vida digna. Realizar campañas anti abandono, de concienciación ciudadana, de esterilización en los colegios y barrios de la ciudad, Fomentar el buen trato a los animales y el medio ambiente', 0x313639323539363836315f6761746f79706572726f2d72656d6f766562672d707265766965772e706e67),
 (13, 'FunZoo nosotros', '', 0x313639323539373938385f66756e7a6f6f33332d72656d6f766562672d707265766965772e706e67),
 (14, 'Servicios extra', 'Manejo de animales peligrosos. Insumos y elementos necesarios. Limpieza, desinfección y control de plagas. Sistema de registro y control de actividades. Manejo y control de enfermedades zoonoticas que puedan afectar la salud publica municipal. Manejo de plan integral de residuos y disposición final, contando además con conceptos favorables de la dirección territorial de salud de caldas ( DTSC ). Contamos con un área de 153 hectáreas con unas instalaciones aptas para especies como: felinos, caninos, ovinos, equinos y fauna. Garantizamos personal profesional idóneo en veterinaria o áreas afines, cuidadores permanentes para prestar una atención integral inmediata necesarios para agilizar el servicio y urgencias presentadas a las necesidades. ', 0x313639323630343031355f6c6f676f5f66756e7a6f6f5f322d72656d6f766562672d707265766965772e706e67),
-(15, 'Donacion', 'Si te quieres apoyar esta gran mision, te invito a que te pongas en contacto con nosotros para hacer tu donaciones o incluso para adoptar a uno de nuestros peluditos', '');
+(15, 'Donacion', 'Si quieres apoyar esta gran mision, te invito a que te pongas en contacto con nosotros para hacer tu donaciones o incluso para adoptar a uno de nuestros peluditos, es muy facil, te dejamos un boton para que puedas comuncarte directamente con nosotros. En la parte de abajo encontraras nuestras redes sociales y el boton para comunicarte con nuestro whatsapp, te esperamos.', ''),
+(16, 'Numero_WP', '3215740916', 0x313639323630353139315f77702e706e67),
+(17, 'Finca Palmira', 'Norcasia - Caldas', ''),
+(18, 'Correo', 'funzoo2022@hotmail.com', ''),
+(19, 'Facebook', '', ''),
+(20, 'Bus redes', '', 0x313639323630363735335f62757372656465732d72656d6f766562672d707265766965772e706e67);
 
 -- --------------------------------------------------------
 
@@ -247,7 +252,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `configuraciones`
 --
 ALTER TABLE `configuraciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `entradas`

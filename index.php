@@ -77,7 +77,7 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-paw"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- Masthead Subheading-->
@@ -92,7 +92,7 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-dog"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
             </div>
@@ -166,7 +166,7 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-cat"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <!-- About Section Content-->
@@ -178,7 +178,7 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-cat"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="row">
@@ -197,7 +197,7 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-horse"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
             
@@ -213,7 +213,7 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <br><br><br><br>
                     </div>
             <?php }?>
-            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Entre otros servicios</h2>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">otros servicios</h2>
             <br><br><br>
             <div class="row">
                     <div class="col-lg-4 ms-auto"><p class="lead" style="text-align:justify;"><?php echo $lista_config[9]['descripcion']?></p></div>
@@ -228,69 +228,14 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-phone"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                 
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+             <div class="text-cont" style="text-align:justify; justify-content:center;">
+             <p class="lead" style="text-align:justify;"><?php echo $lista_config[10]['descripcion']?></p>
+            
+             </div>
+                
         </section>
         <!-- Footer-->
         <footer class="footer text-center">
@@ -298,28 +243,31 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <div class="row">
                     <!-- Footer Location-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <h4 class="text-uppercase mb-4">Ubicación</h4>
                         <p class="lead mb-0">
-                            2215 John Daniel Drive
+                        <?php echo $lista_config[12]['titulo']?>
                             <br />
-                            Clark, MO 65243
+                            <?php echo $lista_config[12]['descripcion']?>
+                            
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                        <h4 class="text-uppercase mb-4">Nuestras redes</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="mailto:<?php echo $lista_config[13]['descripcion']?>"><i class="fa-solid fa-envelope"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="<?php echo $lista_config[13]['descripcion']?>"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="http://wa.me/57<?php echo $lista_config[11]['descripcion']?>" target="_blank"><i class="fab fa-fw fa-whatsapp"></i></a>
+                        <br><br><br><br>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.937394291441!2d-74.8921319251424!3d5.576274333445736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e412b2d8cbd09bb%3A0x282059c54c21537a!2sNorcasia!5e0!3m2!1ses-419!2sco!4v1692606213933!5m2!1ses-419!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                    
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <h4 class="text-uppercase mb-4"></h4>
                         <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
-                            <a href="http://startbootstrap.com">Start Bootstrap</a>
-                            .
+                        <img class="img-fluid rounded mb-5" src="assets/imgFunzoo/config/<?php echo $lista_config[2]['imagen']?>" alt="..." style="margin-top:1px; "/>
+                           
+                            
                         </p>
                     </div>
                 </div>
@@ -327,7 +275,7 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+            <div class="container"><small>Copyright &copy; FunZoo - Sin animo de lucro</small></div>
         </div>
 
        
