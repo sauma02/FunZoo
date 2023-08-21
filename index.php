@@ -19,6 +19,10 @@ $sentencia->execute();
 //Se utiliza fecthAll, se utiliza esta funcion mas el PDO::FETCH_ASSOC para que tengamos acceso a todos los resgitros
 $lista_config = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
+$sentencia=$conexion->prepare("SELECT * FROM `servicios`");
+$sentencia->execute();
+//Se utiliza fecthAll, se utiliza esta funcion mas el PDO::FETCH_ASSOC para que tengamos acceso a todos los resgitros
+$lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
@@ -36,15 +40,17 @@ $lista_config = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://fontawesome.com/icons">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+    
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
 
-               <img  height="50" width="80" src="assets/imgFunzoo/config/<?php echo $lista_config[1]['imagen']?>" class="img-fluid rounded-top "   alt=""> <a class="navbar-brand" href="#page-top"><?php echo $lista_config[1]['descripcion']?></a>
+               <img  height="80" width="80" src="assets/imgFunzoo/config/<?php echo $lista_config[1]['imagen']?>" class="rounded-top "   alt=""> <a class="navbar-brand" href="#page-top"><?php echo $lista_config[1]['descripcion']?></a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -53,6 +59,7 @@ $lista_config = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portafolio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Nosotros</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#services">Servicios</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contacto</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="admin/login.php">Admin log in</a></li>
 
@@ -79,7 +86,7 @@ $lista_config = $sentencia->fetchAll(PDO::FETCH_ASSOC);
         </header>
         <!-- Portfolio Section-->
         <section class="page-section portfolio" id="portfolio">
-            <div class="container">
+            <div class="container1">
                 <!-- Portfolio Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portafolio</h2>
                 <!-- Icon Divider-->
@@ -88,28 +95,32 @@ $lista_config = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Portfolio Grid Items-->
-<style>
-    .row{
-        display: flex  !important;
-    }
-
-            </style>
-                <div class="container">
-                <?php foreach($lista_portafolio as $portafolio){ ?>
-                    <!-- Portfolio Item 1-->
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <div class="portfolio-item" data-bs-toggle="modal" data-bs-target="#portfolioModal<?php echo $portafolio['id']?>">
-                            <div class="portfolio-item-caption d-flex align-items justify-content h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/imgFunzoo/<?php echo $portafolio['imagen']?>" alt="..." />
+            </div>
+                 <div class="row" style="width:100%; margin-left:0px; justify-content: center;">
+                 <?php foreach($lista_portafolio as $portafolio){?>
+                    <div class="col-lg-2 col-sm-6 mb-5" style="display: flex; justify-content: center;">
+                        <!-- Portfolio item 1-->
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal<?php echo $portafolio['id']?>">
+                                <div class="portfolio-hover">
+                                    <style>
+                                        .portfolio-hover-content{
+                                            display: flex;
+                                            justify-content: center;
+                                            position: absolute;
+                                            margin: 100px;
+                                            padding: 100px;
+                                            left: 70px;
+                                            visibility: hidden;
+                                        }
+                                    </style>
+                                    <div class="portfolio-hover-content" ><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" style="width:100%;height: 100%;"src="assets/imgFunzoo/<?php echo $portafolio['imagen']?>" alt="..." />
+                            </a>
                         </div>
                     </div>
-                </div>
-         <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $portafolio['id']?>" tabindex="-1" aria-labelledby="portfolioModa<?php echo $portafolio['id']?>" aria-hidden="true">
+                    <div class="portfolio-modal modal fade" id="portfolioModal<?php echo $portafolio['id']?>" tabindex="-1" aria-labelledby="portfolioModal<?php echo $portafolio['id']?>" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
@@ -128,10 +139,10 @@ $lista_config = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                                     <!-- Portfolio Modal - Image-->
                                     <img class="img-fluid rounded mb-5" src="assets/imgFunzoo/<?php echo $portafolio['imagen']?>" alt="..." />
                                     <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4"><?php echo $portafolio['descripcion']?></p>
+                                    <p class="mb-4" style="text-align:justify;"><?php echo $portafolio['descripcion']?></p>
                                     <button class="btn btn-primary" data-bs-dismiss="modal">
                                         <i class="fas fa-xmark fa-fw"></i>
-                                        Cerrar Ventana
+                                        Cerrar ventana
                                     </button>
                                 </div>
                             </div>
@@ -140,14 +151,18 @@ $lista_config = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </div>
             </div>
         </div>
-                <?php }?>
-            </div>
+                    <?php }?>
+                 </div>
+
         </section>
+                    <!-- Portfolio Modals-->
+        <!-- Portfolio Modal 1-->
+       
         <!-- About Section-->
         <section class="page-section bg-primary text-white mb-0" id="about">
             <div class="container">
                 <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white">MISIÓN y VISIÓN</h2>
                 <!-- Icon Divider-->
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
@@ -156,23 +171,60 @@ $lista_config = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <!-- About Section Content-->
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead" style="text-align:justify;"><?php echo $lista_config[5]['descripcion']?></p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead" style="text-align:justify;"><?php echo $lista_config[6]['descripcion']?></p></div>
                 </div>
+                <h2 class="page-section-heading text-center text-uppercase text-white">OBJETIVO</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 ms-auto"><p class="lead" style="text-align:justify;"><?php echo $lista_config[7]['descripcion']?></p></div>
+                    <div class="col-lg-4 me-auto"><img class="img-fluid rounded mb-5" src="assets/imgFunzoo/config/<?php echo $lista_config[7]['imagen']?>" alt="..." style="margin-top:20px; "/></div>
+                </div>
+                <h2 class="page-section-heading text-center text-uppercase text-white"><img class="img-fluid rounded mb-5" src="assets/imgFunzoo/config/<?php echo $lista_config[8]['imagen']?>" alt="..." style="margin-top:20px; "/></h2>
                 <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div>
+            
             </div>
         </section>
-        <!-- Contact Section-->
+        <!-- Servicios -->
+        <section class="page-section" id="services">
+        <div class="row gx-0 mb-4 mb-lg-5 align-items-center" style="justify-content:center;">
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">SERVICIOS</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+            
+        <?php foreach($lista_servicios as $servicios){?>
+                    <!-- se añade un echo para mostrar la imagen y la seccion que se desea integrar-->
+                    <div class="col-md-3 row justify-content-center">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary "></i>
+                            <i class="fas <?php echo $servicios['icono'];?> fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="text-center my-3"><?php echo $servicios['titulo'];?></h4>
+                        <p class="text-muted text-center"><?php echo $servicios['descripcion'];?></p>
+                        <br><br><br><br>
+                    </div>
+            <?php }?>
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Entre otros servicios</h2>
+            <br><br><br>
+            <div class="row">
+                    <div class="col-lg-4 ms-auto"><p class="lead" style="text-align:justify;"><?php echo $lista_config[9]['descripcion']?></p></div>
+                    <div class="col-lg-4 me-auto"><img class="img-fluid rounded mb-5" src="assets/imgFunzoo/config/<?php echo $lista_config[9]['imagen']?>" alt="..." style="margin-top:20px; "/></div>
+                </div>
+        </section>
         <section class="page-section" id="contact">
             <div class="container">
                 <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">CONTACTANOS</h2>
+              
                 <!-- Icon Divider-->
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
@@ -182,6 +234,7 @@ $lista_config = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <!-- Contact Section Form-->
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
+                 
                         <!-- * * * * * * * * * * * * * * *-->
                         <!-- * * SB Forms Contact Form * *-->
                         <!-- * * * * * * * * * * * * * * *-->

@@ -49,6 +49,7 @@ if(!isset($_SESSION['usuario'])){
             <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/portafolio/">Portafolio</a>
             <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/config/">Configuraciones</a>
             <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/usuarios/">Usuarios</a>
+            <a class="nav-item nav-link" href="<?php echo $url_base;?>secciones/servicios/">Servicios</a>
             <a class="nav-item nav-link" href="<?php echo $url_base;?>cerrar.php">Cerrar sesion</a>
         </div>
     </nav>
