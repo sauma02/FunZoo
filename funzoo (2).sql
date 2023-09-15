@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 21-08-2023 a las 10:42:27
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Host: 127.0.0.1
+-- Generation Time: Sep 15, 2023 at 07:46 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,24 +18,24 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `funzoo`
+-- Database: `funzoo`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `configuraciones`
+-- Table structure for table `configuraciones`
 --
 
 CREATE TABLE `configuraciones` (
   `id` int(11) NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `descripcion` varchar(2555) COLLATE utf8_spanish2_ci NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `descripcion` varchar(2555) NOT NULL,
   `imagen` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `configuraciones`
+-- Dumping data for table `configuraciones`
 --
 
 INSERT INTO `configuraciones` (`id`, `titulo`, `descripcion`, `imagen`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `configuraciones` (`id`, `titulo`, `descripcion`, `imagen`) VALUES
 (8, 'Titulo_body', 'FunZoo', ''),
 (9, 'titulo2_funzoo', 'Porque no hay lugar como el hogar', ''),
 (10, 'Mision', 'Nuestra MISIÓN es mejorar el bienestar de los animales callejeros en riesgo, acabando con la crueldad y negligencia hacia ellos, con la cría descontrolada y el abandono de los mismos a través de rescates, tratamientos veterinarios, y brindándoles una rehabilitación física, con la oportunidad de un hogar y una familia. Con un grupo de personas profesionales podemos realizar esterilizaciones, rescates y adopciones de perros y gatos logrando cambiar la actitud de las personas en favor del bienestar animal, y concientizar cada día mas a quienes se van uniendo a esta labor. Llegar al punto en que se perciba a los animales como seres que sienten y como compañeros en nuestra vida.', ''),
-(11, 'Vision', 'Es nuestra VISION posicionarnos como una de las mejores fundaciones y ser reconocidos a nivel nacional por nuestras labores a favor de los animales, en especial perros y gatos en estado de abandono, extraviados o maltratados. Contaremos con la infraestructura necesaria ( albergue, clínica ) para mejorar nuestros servicios de ayuda a animales desprotejidos, capacitaremos continuamente el personal para mejorar sus habilidades en el cuidado de los animales y formaremos coalición con otras organizaciones de protección animal.', ''),
+(11, 'Vision', 'Es nuestra VISIÓN posicionarnos como una de las mejores fundaciones y ser reconocidos a nivel nacional por nuestras labores a favor de los animales, en especial perros y gatos en estado de abandono, extraviados o maltratados. Contaremos con la infraestructura necesaria ( albergue, clínica ) para mejorar nuestros servicios de ayuda a animales desprotejidos, capacitaremos continuamente el personal para mejorar sus habilidades en el cuidado de los animales y formaremos coalición con otras organizaciones de protección animal.', ''),
 (12, 'Objetivos', 'Defender y velar por la proteccion de los animales, haciendo valer las leyes de protección animal existentes. Denunciar las irregularidades que tengan que ver con la tenencia de animales. Desarrollar proyectos con la finalidad de bienestar animal y realizar actividades para financiar los fines sociales de nuestra entidad. Promoveremos el respeto a todo ser viviente y sus derechos a tener una vida digna. Realizar campañas anti abandono, de concienciación ciudadana, de esterilización en los colegios y barrios de la ciudad, Fomentar el buen trato a los animales y el medio ambiente', 0x313639323539363836315f6761746f79706572726f2d72656d6f766562672d707265766965772e706e67),
 (13, 'FunZoo nosotros', '', 0x313639323539373938385f66756e7a6f6f33332d72656d6f766562672d707265766965772e706e67),
 (14, 'Servicios extra', 'Manejo de animales peligrosos. Insumos y elementos necesarios. Limpieza, desinfección y control de plagas. Sistema de registro y control de actividades. Manejo y control de enfermedades zoonoticas que puedan afectar la salud publica municipal. Manejo de plan integral de residuos y disposición final, contando además con conceptos favorables de la dirección territorial de salud de caldas ( DTSC ). Contamos con un área de 153 hectáreas con unas instalaciones aptas para especies como: felinos, caninos, ovinos, equinos y fauna. Garantizamos personal profesional idóneo en veterinaria o áreas afines, cuidadores permanentes para prestar una atención integral inmediata necesarios para agilizar el servicio y urgencias presentadas a las necesidades. ', 0x313639323630343031355f6c6f676f5f66756e7a6f6f5f322d72656d6f766562672d707265766965772e706e67),
@@ -59,18 +59,18 @@ INSERT INTO `configuraciones` (`id`, `titulo`, `descripcion`, `imagen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `entradas`
+-- Table structure for table `entradas`
 --
 
 CREATE TABLE `entradas` (
   `id` int(11) NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `descripcion` longtext COLLATE utf8_spanish2_ci NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `descripcion` longtext NOT NULL,
   `imagen` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `entradas`
+-- Dumping data for table `entradas`
 --
 
 INSERT INTO `entradas` (`id`, `titulo`, `descripcion`, `imagen`) VALUES
@@ -79,16 +79,16 @@ INSERT INTO `entradas` (`id`, `titulo`, `descripcion`, `imagen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `permisos`
+-- Table structure for table `permisos`
 --
 
 CREATE TABLE `permisos` (
   `id` int(11) NOT NULL,
-  `rol` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
+  `rol` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `permisos`
+-- Dumping data for table `permisos`
 --
 
 INSERT INTO `permisos` (`id`, `rol`) VALUES
@@ -98,18 +98,18 @@ INSERT INTO `permisos` (`id`, `rol`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `portafolio`
+-- Table structure for table `portafolio`
 --
 
 CREATE TABLE `portafolio` (
   `id` int(11) NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `descripcion` varchar(2555) COLLATE utf8_spanish2_ci NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `descripcion` varchar(2555) NOT NULL,
   `imagen` longblob NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `portafolio`
+-- Dumping data for table `portafolio`
 --
 
 INSERT INTO `portafolio` (`id`, `titulo`, `descripcion`, `imagen`) VALUES
@@ -150,18 +150,18 @@ INSERT INTO `portafolio` (`id`, `titulo`, `descripcion`, `imagen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `servicios`
+-- Table structure for table `servicios`
 --
 
 CREATE TABLE `servicios` (
   `id` int(11) NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `descripcion` varchar(2555) COLLATE utf8_spanish2_ci NOT NULL,
-  `icono` varchar(2555) COLLATE utf8_spanish2_ci NOT NULL
+  `titulo` varchar(255) NOT NULL,
+  `descripcion` varchar(2555) NOT NULL,
+  `icono` varchar(2555) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `servicios`
+-- Dumping data for table `servicios`
 --
 
 INSERT INTO `servicios` (`id`, `titulo`, `descripcion`, `icono`) VALUES
@@ -185,18 +185,18 @@ INSERT INTO `servicios` (`id`, `titulo`, `descripcion`, `icono`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
-  `usuario` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_spanish2_ci NOT NULL,
+  `usuario` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `idrol` int(11) DEFAULT NULL,
   `id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`usuario`, `password`, `idrol`, `id`) VALUES
@@ -204,82 +204,82 @@ INSERT INTO `usuarios` (`usuario`, `password`, `idrol`, `id`) VALUES
 ('Sauma03', 'supergamo123', 2, 2);
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `configuraciones`
+-- Indexes for table `configuraciones`
 --
 ALTER TABLE `configuraciones`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `entradas`
+-- Indexes for table `entradas`
 --
 ALTER TABLE `entradas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `permisos`
+-- Indexes for table `permisos`
 --
 ALTER TABLE `permisos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `portafolio`
+-- Indexes for table `portafolio`
 --
 ALTER TABLE `portafolio`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `servicios`
+-- Indexes for table `servicios`
 --
 ALTER TABLE `servicios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `usuario` (`usuario`,`idrol`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `configuraciones`
+-- AUTO_INCREMENT for table `configuraciones`
 --
 ALTER TABLE `configuraciones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT de la tabla `entradas`
+-- AUTO_INCREMENT for table `entradas`
 --
 ALTER TABLE `entradas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `permisos`
+-- AUTO_INCREMENT for table `permisos`
 --
 ALTER TABLE `permisos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `portafolio`
+-- AUTO_INCREMENT for table `portafolio`
 --
 ALTER TABLE `portafolio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT de la tabla `servicios`
+-- AUTO_INCREMENT for table `servicios`
 --
 ALTER TABLE `servicios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

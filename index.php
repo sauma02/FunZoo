@@ -252,11 +252,14 @@ $lista_servicios = $sentencia->fetchAll(PDO::FETCH_ASSOC);
                         </p>
                     </div>
                     <!-- Footer Social Icons-->
+                    <!--href="http://wa.me/57<?//php echo $lista_config[11]['descripcion']?>"-->
+                    <!--<?php //echo $lista_config[13]['descripcion']?>-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
+
                         <h4 class="text-uppercase mb-4">Nuestras redes</h4>
                         <a class="btn btn-outline-light btn-social mx-1" href="mailto:<?php echo $lista_config[13]['descripcion']?>"><i class="fa-solid fa-envelope"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="<?php echo $lista_config[13]['descripcion']?>"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="http://wa.me/57<?php echo $lista_config[11]['descripcion']?>" target="_blank"><i class="fab fa-fw fa-whatsapp"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="pagina_error.php"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="pagina_error.php" target="_blank"><i class="fab fa-fw fa-whatsapp"></i></a>
                         <br><br><br><br>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.937394291441!2d-74.8921319251424!3d5.576274333445736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e412b2d8cbd09bb%3A0x282059c54c21537a!2sNorcasia!5e0!3m2!1ses-419!2sco!4v1692606213933!5m2!1ses-419!2sco" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
